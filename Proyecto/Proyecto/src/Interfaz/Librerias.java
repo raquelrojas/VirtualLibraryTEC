@@ -130,7 +130,7 @@ public class Librerias extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 630, 370));
 
-        btnAgregar.setBackground(new java.awt.Color(0, 153, 153));
+        btnAgregar.setBackground(new java.awt.Color(0, 204, 204));
         btnAgregar.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregar.setText("Agregar");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +140,7 @@ public class Librerias extends javax.swing.JFrame {
         });
         getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, -1, -1));
 
-        btnEliminar.setBackground(new java.awt.Color(0, 153, 153));
+        btnEliminar.setBackground(new java.awt.Color(0, 204, 204));
         btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +150,7 @@ public class Librerias extends javax.swing.JFrame {
         });
         getContentPane().add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, -1, -1));
 
-        btnConsultar.setBackground(new java.awt.Color(0, 153, 153));
+        btnConsultar.setBackground(new java.awt.Color(0, 204, 204));
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
         btnConsultar.setText("Consultar ");
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +160,7 @@ public class Librerias extends javax.swing.JFrame {
         });
         getContentPane().add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
 
-        btnMenu.setBackground(new java.awt.Color(0, 153, 153));
+        btnMenu.setBackground(new java.awt.Color(0, 204, 204));
         btnMenu.setForeground(new java.awt.Color(255, 255, 255));
         btnMenu.setText("Menú");
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +170,7 @@ public class Librerias extends javax.swing.JFrame {
         });
         getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
 
-        btnSalir.setBackground(new java.awt.Color(0, 153, 153));
+        btnSalir.setBackground(new java.awt.Color(0, 204, 204));
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {

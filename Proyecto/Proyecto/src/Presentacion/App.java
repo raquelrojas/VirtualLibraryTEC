@@ -7,12 +7,10 @@ package Presentacion;
 
 import Interfaz.Librerias;
 import Interfaz.Menu;
-import Interfaz.CrearLibreria;
+import Interfaz.Libro;
 import Libreria.GestionLibrerias;
-import Libreria.Libreria;
-import Tabla.ModeladorTablas;
-import estructura.Lista;
-import estructura.Nodo;
+import Libros.GestionLibro;
+
         
 
 /**
@@ -21,17 +19,22 @@ import estructura.Nodo;
  */
 public class App {
     
+    public static GestionLibrerias gestion_libreria = new GestionLibrerias();
+    public static GestionLibro gestion_libro = new GestionLibro();
+    
     public static void main(String args[]) {
-     
-        GestionLibrerias gestion_libreria = new GestionLibrerias();
 
          /**
          * SE CREA LA INSTANCIA PARA LLAMAR LA VENTANA PRINCIPAL
          */
         Menu principal = new Menu();
         principal.setVisible(true);
-    }
+        
+        Librerias libreria = new Librerias();
+        
+        
+        Libro libro = new Libro();
         
      
     }
-
+}

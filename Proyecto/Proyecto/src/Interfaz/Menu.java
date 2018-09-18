@@ -8,6 +8,8 @@ package Interfaz;
 import Tabla.ModeladorTablas;
 import Libreria.GestionLibrerias;
 import Libreria.Libreria;
+import Libros.GestionLibro;
+import Presentacion.App;
 
 /**
  *
@@ -73,6 +75,11 @@ public class Menu extends javax.swing.JFrame {
         btnLibros.setBackground(new java.awt.Color(0, 204, 204));
         btnLibros.setForeground(new java.awt.Color(255, 255, 255));
         btnLibros.setText("Gestión de Libros");
+        btnLibros.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnLibrosMouseClicked(evt);
+            }
+        });
         getContentPane().add(btnLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
 
         btnBusqueda.setBackground(new java.awt.Color(0, 204, 204));
@@ -112,7 +119,9 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
-        // TODO add your handling code here:
+        Buscar buscar = new Buscar();
+        buscar.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnBusquedaActionPerformed
 
     private void btnLibreriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibreriasMouseClicked
@@ -125,7 +134,7 @@ public class Menu extends javax.swing.JFrame {
         principal.setGestion_libreria(gestion_libreria);
         
         /**
-         * EN ESTE CASO SE NECESITAN LAS COLUMNAS DE LOS ANIMALES
+         * EN ESTE CASO SE NECESITAN LAS COLUMNAS DE LOS LIBROS
          */
         Object[] columnasLibreria = new Object[] {"ID","Nombre","País","Ubicacion", "Telefono", "Horario"};        
         principal.getTabla_librerias().setModel(ModeladorTablas.generarModeloDeTabla(6, columnasLibreria));
@@ -144,6 +153,20 @@ public class Menu extends javax.swing.JFrame {
         holi.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnHolidaysActionPerformed
+
+    private void btnLibrosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLibrosMouseClicked
+
+        this.setVisible(false);
+            
+        Libro principal = new Libro();
+        principal.setVisible(true);
+        principal.setGestion_libro(App.gestion_libro);// global lista
+        
+        Object[] columnasLibros = new Object[] {"Issn","Nombre","Tema","Cant Vendida","Cant Disponible", "Descripcion", "Precio"};        
+        principal.getTabla_libro().setModel(ModeladorTablas.generarModeloDeTabla(7, columnasLibros));
+        principal.getTabla_libro().setAutoCreateRowSorter(true);
+        principal.actualizarTabla();
+    }//GEN-LAST:event_btnLibrosMouseClicked
 
 
    

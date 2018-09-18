@@ -76,7 +76,7 @@ public class CrearLibreria extends javax.swing.JDialog {
         txtpais.setToolTipText("Nombre del animal");
         getContentPane().add(txtpais, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 260, -1));
 
-        btn_crear.setBackground(new java.awt.Color(0, 153, 153));
+        btn_crear.setBackground(new java.awt.Color(0, 204, 204));
         btn_crear.setForeground(new java.awt.Color(255, 255, 255));
         btn_crear.setText("Crear");
         btn_crear.addActionListener(new java.awt.event.ActionListener() {
@@ -86,7 +86,7 @@ public class CrearLibreria extends javax.swing.JDialog {
         });
         getContentPane().add(btn_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 350, 70, 30));
 
-        btnSalir.setBackground(new java.awt.Color(0, 153, 153));
+        btnSalir.setBackground(new java.awt.Color(0, 204, 204));
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +96,7 @@ public class CrearLibreria extends javax.swing.JDialog {
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
 
-        btnLibreria.setBackground(new java.awt.Color(0, 153, 153));
+        btnLibreria.setBackground(new java.awt.Color(0, 204, 204));
         btnLibreria.setForeground(new java.awt.Color(255, 255, 255));
         btnLibreria.setText("Librería");
         btnLibreria.addActionListener(new java.awt.event.ActionListener() {
