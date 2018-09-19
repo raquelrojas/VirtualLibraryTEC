@@ -10,6 +10,8 @@ import Libreria.GestionLibrerias;
 import Libreria.Libreria;
 import Libros.GestionLibro;
 import Presentacion.App;
+import PedidosLibros.Usuario;
+
 
 /**
  *
@@ -95,6 +97,11 @@ public class Menu extends javax.swing.JFrame {
         btnPedidos.setBackground(new java.awt.Color(0, 204, 204));
         btnPedidos.setForeground(new java.awt.Color(255, 255, 255));
         btnPedidos.setText("Pedidos de Libros");
+        btnPedidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPedidosActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
 
         btnAtencion.setBackground(new java.awt.Color(0, 204, 204));
@@ -167,6 +174,13 @@ public class Menu extends javax.swing.JFrame {
         principal.getTabla_libro().setAutoCreateRowSorter(true);
         principal.actualizarTabla();
     }//GEN-LAST:event_btnLibrosMouseClicked
+
+    private void btnPedidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidosActionPerformed
+        Usuarios usuario = new Usuarios();
+        usuario.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_btnPedidosActionPerformed
 
 
    

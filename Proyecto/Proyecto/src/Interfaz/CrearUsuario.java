@@ -20,9 +20,76 @@ public class CrearUsuario extends javax.swing.JDialog {
      * OJO QUE SIEMPRE SE MANEJA TODO POR INSTANCIAS NUNCA METÍ DENTRO DEL
      * CÓDIGO DE LA INTERFAZ GRÁFICA OTRA COSA QUE NO FUERA DE LA INTERFAZ *
      */
-    private GestionUsuario principal; // ESTA INSTANCIA PERMITE A ESTA VENTANA COMUNICARSE CON LA VENTANA PRINCIPAL
+   
+       public GestionUsuario gestion_usuario; // DEBE ESTAR DECLARADO E INICIALIZADO 
+
+    public GestionUsuario getGestion_usuario() {
+        return gestion_usuario;
+    }
+
+    public void setGestion_libro(GestionUsuario gestion_libro) {
+        this.gestion_usuario = gestion_libro;
+    }
 
     /**
+     * GENERAR GETTER AND SETTER DE LA TABLA
+     *
+     * @return
+    
+       public JTable getTabla_libro() {
+        return tabla_libros;
+    }
+
+    public void setTabla_librerias(JTable tabla_libros) {
+        this.tabla_libros = tabla_libros;
+    }
+    
+    
+    /**
+     * Creates new form GestiondeLibrerias
+    
+    public Usuario() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+      
+    }
+    */
+    
+   
+    
+    /**
+     * Permite actualizar la tabla, de modo que va a la lista de gestión y la recorre para llenar la tabla nuevamente
+     
+    public void actualizarTabla() {
+
+        ModeladorTablas.vaciarTabla(tabla_libros);
+        Object[] filaNueva;
+        Nodo<Libros> temp = gestion_libro.getLibros().getInicio();
+        for (int i = 0; i < gestion_libro.getLibros().getSize(); i++) {
+            filaNueva = new Object[]{temp.getElemento().getIssn(),
+                temp.getElemento().getNombre(),
+                temp.getElemento().getTema(),
+                temp.getElemento().getCantvendida(),
+                temp.getElemento().getCantdisponible(),
+                temp.getElemento().getDescripcion(),
+                temp.getElemento().getPrecio()};
+            ModeladorTablas.nuevaFila(tabla_libros, filaNueva);
+            temp = temp.getNodoSig();
+        }
+    }
+
+    
+     * Cuando se selecciona un dato específico, este será eliminado tanto en la tabla como en la lista enlazada
+     * @throws Exception 
+    
+    public void eliminarDesdeTabla() throws Exception {
+        int rowNum = tabla_libros.getSelectedRow();
+        String elim = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 0);//ModeladorTablas.obtenerValorCelda(tabla_animales, rowNum, 0);
+        gestion_libro.eliminarLibros(elim);
+        actualizarTabla();
+    }
+
+    
      * Creates new form PantallaCrearAnimal
      */
     public CrearUsuario(java.awt.Frame parent, boolean modal, Usuario principal) {
@@ -45,11 +112,11 @@ public class CrearUsuario extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtid = new javax.swing.JTextField();
+        txtcedula = new javax.swing.JTextField();
         txtnombre = new javax.swing.JTextField();
-        txthorario = new javax.swing.JTextField();
+        txtcorreo = new javax.swing.JTextField();
         txttelefono = new javax.swing.JTextField();
-        txtpais = new javax.swing.JTextField();
+        txtdireccion = new javax.swing.JTextField();
         btn_crear = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         btnLibreria = new javax.swing.JButton();
@@ -58,7 +125,7 @@ public class CrearUsuario extends javax.swing.JDialog {
         lblPais = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblTelefono = new javax.swing.JLabel();
-        lblHorario = new javax.swing.JLabel();
+        lblcorreo = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
@@ -66,16 +133,16 @@ public class CrearUsuario extends javax.swing.JDialog {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtid.setToolTipText("Identificador del animal");
-        getContentPane().add(txtid, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 260, -1));
+        txtcedula.setToolTipText("Identificador del animal");
+        getContentPane().add(txtcedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 260, -1));
 
         txtnombre.setToolTipText("Tipo de animal");
         getContentPane().add(txtnombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 260, -1));
-        getContentPane().add(txthorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 260, 20));
+        getContentPane().add(txtcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 260, 20));
         getContentPane().add(txttelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 260, -1));
 
-        txtpais.setToolTipText("Nombre del animal");
-        getContentPane().add(txtpais, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 260, -1));
+        txtdireccion.setToolTipText("Nombre del animal");
+        getContentPane().add(txtdireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 260, -1));
 
         btn_crear.setBackground(new java.awt.Color(0, 204, 204));
         btn_crear.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,7 +152,7 @@ public class CrearUsuario extends javax.swing.JDialog {
                 btn_crearActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 90, 30));
+        getContentPane().add(btn_crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 90, 30));
 
         btnSalir.setBackground(new java.awt.Color(0, 204, 204));
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,7 +162,7 @@ public class CrearUsuario extends javax.swing.JDialog {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 350, -1, -1));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
 
         btnLibreria.setBackground(new java.awt.Color(0, 204, 204));
         btnLibreria.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +172,7 @@ public class CrearUsuario extends javax.swing.JDialog {
                 btnLibreriaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLibreria, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, -1, -1));
+        getContentPane().add(btnLibreria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, -1));
 
         lblAlerta.setFont(new java.awt.Font("Roboto Lt", 1, 18)); // NOI18N
         lblAlerta.setForeground(new java.awt.Color(255, 0, 0));
@@ -128,9 +195,9 @@ public class CrearUsuario extends javax.swing.JDialog {
         lblTelefono.setText("Teléfono:");
         getContentPane().add(lblTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, 20));
 
-        lblHorario.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        lblHorario.setText("Horario:");
-        getContentPane().add(lblHorario, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
+        lblcorreo.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        lblcorreo.setText("Correo:");
+        getContentPane().add(lblcorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, -1, -1));
 
         lblTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         lblTitulo.setText("Crear Usuario");
@@ -146,20 +213,20 @@ public class CrearUsuario extends javax.swing.JDialog {
 
         // ESTAS VARIABLES SIRVEN PARA GUARDAR LA INFORMACION DE LOS TEXTFIELDS.
         String cedula, nombre, direccion, telefono, correo;
-        cedula = this.txtid.getText();
+        cedula = this.txtcedula.getText();
         nombre = this.txtnombre.getText();
-        direccion = this.txtpais.getText();
+        direccion = this.txtdireccion.getText();
         telefono = this.txttelefono.getText();
-        correo = this.txthorario.getText();
+        correo = this.txtcorreo.getText();
         
-        if (this.txtid.getText() == "" || this.txtnombre.getText() == "" || this.txtpais.getText() == "" || this.txtubicacion.getText() == "" || this.txttelefono.getText() == "" || this.txthorario.getText() == ""){
+        if (this.txtcedula.getText() == "" || this.txtnombre.getText() == "" || this.txtdireccion.getText() == "" || this.txtdireccion.getText() == "" || this.txttelefono.getText() == "" || this.txtcorreo.getText() == ""){
             lblAlerta.setVisible(true);
             
         } else{
             
-            principal.getGestion_usuarios().gestionUsuario(cedula, nombre,direccion,telefono,correo); ////AQUI PUEDO LLAMAR EL METODO DE LA VENTANA PADRE.
+           // principal.getGestion_Usuario().agregar(cedula, nombre,direccion,telefono,correo); ////AQUI PUEDO LLAMAR EL METODO DE LA VENTANA PADRE.
 
-            principal.actualizarTabla();
+            //principal.actualizarTabla();
 
         this.dispose();
         }
@@ -182,16 +249,16 @@ public class CrearUsuario extends javax.swing.JDialog {
     private javax.swing.JButton btn_crear;
     private javax.swing.JLabel fondo;
     private javax.swing.JLabel lblAlerta;
-    private javax.swing.JLabel lblHorario;
     private javax.swing.JLabel lblID;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPais;
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField txthorario;
-    private javax.swing.JTextField txtid;
+    private javax.swing.JLabel lblcorreo;
+    private javax.swing.JTextField txtcedula;
+    private javax.swing.JTextField txtcorreo;
+    private javax.swing.JTextField txtdireccion;
     private javax.swing.JTextField txtnombre;
-    private javax.swing.JTextField txtpais;
     private javax.swing.JTextField txttelefono;
     // End of variables declaration//GEN-END:variables
 }

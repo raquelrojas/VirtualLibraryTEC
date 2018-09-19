@@ -5,66 +5,57 @@
  */
 package PedidosLibros;
 
+import Libros.Libros;
 import estructura.*;
-
+import modelo.enums.CategoriasLibros;
+import estructura.Lista;
 
 /**
  *
  * @author Ignacio
  * @param <X>
  */
-public  class GestionUsuario<X>{
-    private DoubleLinkedList<X> listaGestionada;
+public  class GestionUsuario{
+    private Lista<Usuario> usuarios;
 
-    public DoubleLinkedList<X> getListaGestionada() {
-        return listaGestionada;
+    public Lista<Usuario> getUsuarios() {
+        return usuarios;
     }
 
-    public void setListaGestionada(DoubleLinkedList<X> listaGestionada) {
-        this.listaGestionada = listaGestionada;
+    public void setUsuarios(Lista<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 
     @Override
     public String toString() {
-        return "GestionGenerica{" + "listaGestionada=" + listaGestionada + '}';
+        return "GestionGenerica{" + "listaGestionada=" + usuarios + '}';
     }
 
     public  GestionUsuario() {
-        this.listaGestionada = new DoubleLinkedList<>();
+        this.usuarios = new Lista<>();
         
     }
     
-    public void agregar(X elemento){
-        listaGestionada.insert(elemento);
+    private Usuario buscar(String cedula) {
+        Nodo<Usuario> temp = usuarios.getInicio();
+        for (int i = 0; i < usuarios.getSize(); i++) {
+            if (temp.getElemento().getCedula().equals(cedula)) {
+                break;
+            } else {
+                temp = temp.getNodoSig();
+            }
+        }
+        return temp.getElemento();
+    }
+    
+    public void crearUsuario(String cedula, String nombre, String direccion, String telefono, String correo) {
+        Usuario newUsuario = new Usuario(cedula, nombre, direccion, telefono,correo);
+        this.usuarios.insertarDetras(newUsuario);
         
-    }    
-        public X consultar(X elemento){
-        return listaGestionada.consult(elemento);
-    }
-   public void modificar(X oldElement, X newElement){
-     listaGestionada.update(oldElement, newElement);
-     }
-   
-   public void eliminar(X elemento){
-        listaGestionada.delete(elemento);
-     }
-
-    public void actualizarTabla() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getGestion_libreria() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getGestion_usuarios() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
-    
-    
-    
-    
-    
+     public void eliminarUsuario(String cedula) throws Exception {
+        usuarios.eliminarNodoEspecifico(buscar(cedula));
+    }
 }

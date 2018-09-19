@@ -5,21 +5,13 @@
  */
 package PedidosLibros;
 import Extras.GeneradorCodigos;
-import extras.*;
+import Extras.*;
 
 public class Usuario {
-    private String dni, cedula, nombre, direccion, telefono, correo;
+    private String cedula, nombre, direccion, telefono, correo;
     private GeneradorCodigos generadorCodigos;
 
 
-    
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
 
     public String getCedula() {
         return cedula;
@@ -68,12 +60,12 @@ public class Usuario {
         this.telefono = telefono;
         this.correo = correo;
         this.generadorCodigos = new GeneradorCodigos(5);
-        this.dni = "U-" + generadorCodigos.generarCodigo();
+      
     }
 
     @Override
     public String toString() {
-        return "Usuario{" + "\n"+"dni=" + dni + ", cedula=" + cedula + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + ", correo=" + correo + '}'+"\n";
+        return "Usuario{" + "\n"+ ", cedula=" + cedula + ", nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + ", correo=" + correo + '}'+"\n";
     }
     
     
