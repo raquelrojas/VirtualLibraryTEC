@@ -17,6 +17,7 @@ import Interfaz.CrearLibros;
 import Libreria.Libreria;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+import modelo.enums.CategoriasLibros;
 
 /**
  *
@@ -94,14 +95,20 @@ public class Libro extends javax.swing.JFrame {
         actualizarTabla();
     }
     
-    public void consultarTabla() throws Exception {
+    public void consultarTabla() {
     int rowNum = tabla_libros.getSelectedRow();
-    int i = 0;
-    while (i < 7) {
-    String consultar = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, i);
-    consultar = consultar + "\n ";
-    }
-    JOptionPane.showMessageDialog(this, consultar);
+    String cIssn = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 0);
+    String cNombre = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 1);
+    String vendidos = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 3);
+    int cVendidos = Integer.parseInt(vendidos);
+    int cDisponibles = Integer.parseInt(ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 4));
+    String tema = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 2);
+    CategoriasLibros cTema = CategoriasLibros.valueOf(tema);
+    String cDescripcion = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 5);
+    String Precio = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 6);
+    double cPrecio = Double.parseDouble(Precio);
+    JOptionPane.showMessageDialog(null, "Issn: \n" + cIssn + "Nombre: \n" + cNombre + " Cantidad Vendidos: \n" + cVendidos + "Cantidad Disponibles: \n" + cDisponibles + "Tema \n" + cTema + "Descripción: \n" + cDescripcion + "Precio: " + cPrecio);
+    
     
     }
     @SuppressWarnings("unchecked")
@@ -222,11 +229,8 @@ public class Libro extends javax.swing.JFrame {
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
        // JOptionPane.showMessageDialog(null, this.gestion_libro.getLibros().toString());
-       
-       try {
        consultarTabla();
-       } catch (Exception ex) {
-       }
+      
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
