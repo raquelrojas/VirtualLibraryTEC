@@ -59,5 +59,4 @@ public class ModeladorTablas {
         return (String) nombre_tabla.getValueAt(fila, columna);
     }
     
-    
 }

@@ -23,6 +23,8 @@ import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
  * @author marip
  */
 public class Libro extends javax.swing.JFrame {
+    
+    String consultar;
 
        public GestionLibro gestion_libro; // DEBE ESTAR DECLARADO E INICIALIZADO 
 
@@ -90,6 +92,17 @@ public class Libro extends javax.swing.JFrame {
         String elim = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 0);//ModeladorTablas.obtenerValorCelda(tabla_animales, rowNum, 0);
         gestion_libro.eliminarLibros(elim);
         actualizarTabla();
+    }
+    
+    public void consultarTabla() throws Exception {
+    int rowNum = tabla_libros.getSelectedRow();
+    int i = 0;
+    while (i < 7) {
+    String consultar = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, i);
+    consultar = consultar + "\n ";
+    }
+    JOptionPane.showMessageDialog(this, consultar);
+    
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -193,6 +206,10 @@ public class Libro extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnAgregarActionPerformed
 
+    
+   
+    
+    
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
            try {
 
@@ -204,7 +221,12 @@ public class Libro extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        JOptionPane.showMessageDialog(null, this.gestion_libro.getLibros().toString());
+       // JOptionPane.showMessageDialog(null, this.gestion_libro.getLibros().toString());
+       
+       try {
+       consultarTabla();
+       } catch (Exception ex) {
+       }
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
