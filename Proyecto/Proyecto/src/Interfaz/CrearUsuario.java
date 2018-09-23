@@ -8,6 +8,7 @@ package Interfaz;
 import PedidosLibros.GestionUsuario;
 import PedidosLibros.Usuario;
 import javax.swing.JFrame;
+import javax.swing.JTable.*;
 import javax.swing.SwingUtilities;
 
 /**
@@ -21,79 +22,12 @@ public class CrearUsuario extends javax.swing.JDialog {
      * CÓDIGO DE LA INTERFAZ GRÁFICA OTRA COSA QUE NO FUERA DE LA INTERFAZ *
      */
    
-       public GestionUsuario gestion_usuario; // DEBE ESTAR DECLARADO E INICIALIZADO 
+       public Usuarios usuario; // DEBE ESTAR DECLARADO E INICIALIZADO 
 
-    public GestionUsuario getGestion_usuario() {
-        return gestion_usuario;
-    }
 
-    public void setGestion_libro(GestionUsuario gestion_libro) {
-        this.gestion_usuario = gestion_libro;
-    }
-
-    /**
-     * GENERAR GETTER AND SETTER DE LA TABLA
-     *
-     * @return
-    
-       public JTable getTabla_libro() {
-        return tabla_libros;
-    }
-
-    public void setTabla_librerias(JTable tabla_libros) {
-        this.tabla_libros = tabla_libros;
-    }
-    
-    
-    /**
-     * Creates new form GestiondeLibrerias
-    
-    public Usuario() {
-        initComponents();
-        this.setLocationRelativeTo(null);
-      
-    }
-    */
-    
    
-    
-    /**
-     * Permite actualizar la tabla, de modo que va a la lista de gestión y la recorre para llenar la tabla nuevamente
-     
-    public void actualizarTabla() {
 
-        ModeladorTablas.vaciarTabla(tabla_libros);
-        Object[] filaNueva;
-        Nodo<Libros> temp = gestion_libro.getLibros().getInicio();
-        for (int i = 0; i < gestion_libro.getLibros().getSize(); i++) {
-            filaNueva = new Object[]{temp.getElemento().getIssn(),
-                temp.getElemento().getNombre(),
-                temp.getElemento().getTema(),
-                temp.getElemento().getCantvendida(),
-                temp.getElemento().getCantdisponible(),
-                temp.getElemento().getDescripcion(),
-                temp.getElemento().getPrecio()};
-            ModeladorTablas.nuevaFila(tabla_libros, filaNueva);
-            temp = temp.getNodoSig();
-        }
-    }
-
-    
-     * Cuando se selecciona un dato específico, este será eliminado tanto en la tabla como en la lista enlazada
-     * @throws Exception 
-    
-    public void eliminarDesdeTabla() throws Exception {
-        int rowNum = tabla_libros.getSelectedRow();
-        String elim = ModeladorTablas.obtenerValorCelda(tabla_libros, rowNum, 0);//ModeladorTablas.obtenerValorCelda(tabla_animales, rowNum, 0);
-        gestion_libro.eliminarLibros(elim);
-        actualizarTabla();
-    }
-
-    
-     * Creates new form PantallaCrearAnimal
-     */
-    public CrearUsuario(java.awt.Frame parent, boolean modal, Usuario principal) {
-        super(parent, modal);
+    public CrearUsuario() {
         initComponents();
         lblAlerta.setVisible(false);
          this.setLocationRelativeTo(null);
@@ -224,9 +158,9 @@ public class CrearUsuario extends javax.swing.JDialog {
             
         } else{
             
-           // principal.getGestion_Usuario().agregar(cedula, nombre,direccion,telefono,correo); ////AQUI PUEDO LLAMAR EL METODO DE LA VENTANA PADRE.
+           usuario.getGestion_usuario().crearUsuario(cedula, nombre,direccion,telefono,correo); ////AQUI PUEDO LLAMAR EL METODO DE LA VENTANA PADRE.
 
-            //principal.actualizarTabla();
+            usuario.actualizarTabla();
 
         this.dispose();
         }

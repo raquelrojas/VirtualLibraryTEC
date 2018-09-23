@@ -17,6 +17,7 @@ import Interfaz.CrearLibros;
 import Libreria.Libreria;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE;
+import Interfaz.Usuarios;
 
 /**
  *
@@ -91,6 +92,7 @@ public class LibroFiltrado extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_libros = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,7 +109,7 @@ public class LibroFiltrado extends javax.swing.JFrame {
                 btnConsultarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
+        getContentPane().add(btnConsultar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 480, -1, -1));
 
         btnMenu.setBackground(new java.awt.Color(0, 204, 204));
         btnMenu.setForeground(new java.awt.Color(255, 255, 255));
@@ -117,7 +119,7 @@ public class LibroFiltrado extends javax.swing.JFrame {
                 btnMenuActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 480, -1, -1));
+        getContentPane().add(btnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, -1, -1));
 
         lblTitulo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         lblTitulo.setText("Libros Filtrados");
@@ -138,6 +140,17 @@ public class LibroFiltrado extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 570, 350));
 
+        jButton1.setBackground(new java.awt.Color(0, 204, 204));
+        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Hacer un pedido");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 480, -1, -1));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondos-de-colores-lisos-claros.jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 719, 537));
 
@@ -154,6 +167,16 @@ public class LibroFiltrado extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnMenuActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        CrearUsuario usuario  = new CrearUsuario();
+        usuario.setVisible(true);
+        usuario.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+        this.setVisible(false);
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
  
  
 
@@ -161,6 +184,7 @@ public class LibroFiltrado extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnMenu;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tabla_libros;

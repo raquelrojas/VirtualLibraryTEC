@@ -5,12 +5,9 @@
  */
 package Libros;
 
-import Libreria.Libreria;
+
 import estructura.Lista;
-import Libros.Libros;
 import estructura.Nodo;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.enums.CategoriasLibros;
 
 public class GestionLibro{
