@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="btncerrar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="275" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace pref="55" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="187" max="-2" attributes="0"/>
+              <EmptySpace pref="28" max="32767" attributes="0"/>
+              <Component id="btncerrar" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="C&#xf3;digos de Idioma"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value=" &quot;af&quot;: &quot;Afrikaans&quot;, &#xa;  &quot;ar&quot;: &quot;Arabic&quot;, &#xa;  &quot;az&quot;: &quot;Azerbaijani&quot;, &#xa;  &quot;be&quot;: &quot;Belarusian&quot;, &#xa;  &quot;bg&quot;: &quot;Bulgarian&quot;, &#xa;  &quot;bn&quot;: &quot;Bengali&quot;, &#xa;  &quot;bs&quot;: &quot;Bosnian&quot;, &#xa;  &quot;ca&quot;: &quot;Catalan&quot;, &#xa;  &quot;ceb&quot;: &quot;Cebuano&quot;, &#xa;  &quot;cs&quot;: &quot;Czech&quot;, &#xa;  &quot;cy&quot;: &quot;Welsh&quot;, &#xa;  &quot;da&quot;: &quot;Danish&quot;, &#xa;  &quot;de&quot;: &quot;German&quot;, &#xa;  &quot;el&quot;: &quot;Greek&quot;, &#xa;  &quot;en&quot;: &quot;English&quot;, &#xa;  &quot;eo&quot;: &quot;Esperanto&quot;, &#xa;  &quot;es&quot;: &quot;Spanish&quot;, &#xa;  &quot;et&quot;: &quot;Estonian&quot;, &#xa;  &quot;eu&quot;: &quot;Basque&quot;, &#xa;  &quot;fa&quot;: &quot;Persian&quot;, &#xa;  &quot;fi&quot;: &quot;Finnish&quot;, &#xa;  &quot;fr&quot;: &quot;French&quot;, &#xa;  &quot;ga&quot;: &quot;Irish&quot;, &#xa;  &quot;gl&quot;: &quot;Galician&quot;, &#xa;  &quot;gu&quot;: &quot;Gujarati&quot;, &#xa;  &quot;ha&quot;: &quot;Hausa&quot;, &#xa;  &quot;hi&quot;: &quot;Hindi&quot;, &#xa;  &quot;hmn&quot;: &quot;Hmong&quot;, &#xa;  &quot;hr&quot;: &quot;Croatian&quot;, &#xa;  &quot;ht&quot;: &quot;Haitian Creole&quot;, &#xa;  &quot;hu&quot;: &quot;Hungarian&quot;, &#xa;  &quot;hy&quot;: &quot;Armenian&quot;, &#xa;  &quot;id&quot;: &quot;Indonesian&quot;, &#xa;  &quot;ig&quot;: &quot;Igbo&quot;, &#xa;  &quot;is&quot;: &quot;Icelandic&quot;, &#xa;  &quot;it&quot;: &quot;Italian&quot;, &#xa;  &quot;iw&quot;: &quot;Hebrew&quot;, &#xa;  &quot;ja&quot;: &quot;Japanese&quot;, &#xa;  &quot;jw&quot;: &quot;Javanese&quot;, &#xa;  &quot;ka&quot;: &quot;Georgian&quot;, &#xa;  &quot;kk&quot;: &quot;Kazakh&quot;, &#xa;  &quot;km&quot;: &quot;Khmer&quot;, &#xa;  &quot;kn&quot;: &quot;Kannada&quot;, &#xa;  &quot;ko&quot;: &quot;Korean&quot;, &#xa;  &quot;la&quot;: &quot;Latin&quot;, &#xa;  &quot;lo&quot;: &quot;Lao&quot;, &#xa;  &quot;lt&quot;: &quot;Lithuanian&quot;, &#xa;  &quot;lv&quot;: &quot;Latvian&quot;, &#xa;  &quot;ma&quot;: &quot;Punjabi&quot;, &#xa;  &quot;mg&quot;: &quot;Malagasy&quot;, &#xa;  &quot;mi&quot;: &quot;Maori&quot;, &#xa;  &quot;mk&quot;: &quot;Macedonian&quot;, &#xa;  &quot;ml&quot;: &quot;Malayalam&quot;, &#xa;  &quot;mn&quot;: &quot;Mongolian&quot;, &#xa;  &quot;mr&quot;: &quot;Marathi&quot;, &#xa;  &quot;ms&quot;: &quot;Malay&quot;, &#xa;  &quot;mt&quot;: &quot;Maltese&quot;, &#xa;  &quot;my&quot;: &quot;Myanmar (Burmese)&quot;, &#xa;  &quot;ne&quot;: &quot;Nepali&quot;, &#xa;  &quot;nl&quot;: &quot;Dutch&quot;, &#xa;  &quot;no&quot;: &quot;Norwegian&quot;, &#xa;  &quot;ny&quot;: &quot;Chichewa&quot;, &#xa;  &quot;pl&quot;: &quot;Polish&quot;, &#xa;  &quot;pt&quot;: &quot;Portuguese&quot;, &#xa;  &quot;ro&quot;: &quot;Romanian&quot;, &#xa;  &quot;ru&quot;: &quot;Russian&quot;, &#xa;  &quot;si&quot;: &quot;Sinhala&quot;, &#xa;  &quot;sk&quot;: &quot;Slovak&quot;, &#xa;  &quot;sl&quot;: &quot;Slovenian&quot;, &#xa;  &quot;so&quot;: &quot;Somali&quot;, &#xa;  &quot;sq&quot;: &quot;Albanian&quot;, &#xa;  &quot;sr&quot;: &quot;Serbian&quot;, &#xa;  &quot;st&quot;: &quot;Sesotho&quot;, &#xa;  &quot;su&quot;: &quot;Sudanese&quot;, &#xa;  &quot;sv&quot;: &quot;Swedish&quot;, &#xa;  &quot;sw&quot;: &quot;Swahili&quot;, &#xa;  &quot;ta&quot;: &quot;Tamil&quot;, &#xa;  &quot;te&quot;: &quot;Telugu&quot;, &#xa;  &quot;tg&quot;: &quot;Tajik&quot;, &#xa;  &quot;th&quot;: &quot;Thai&quot;, &#xa;  &quot;tl&quot;: &quot;Filipino&quot;, &#xa;  &quot;tr&quot;: &quot;Turkish&quot;, &#xa;  &quot;uk&quot;: &quot;Ukrainian&quot;, &#xa;  &quot;ur&quot;: &quot;Urdu&quot;, &#xa;  &quot;uz&quot;: &quot;Uzbek&quot;, &#xa;  &quot;vi&quot;: &quot;Vietnamese&quot;, &#xa;  &quot;yi&quot;: &quot;Yiddish&quot;, &#xa;  &quot;yo&quot;: &quot;Yoruba&quot;, &#xa;  &quot;zh-CN&quot;: &quot;Chinese Simplified&quot;, &#xa;  &quot;zh-TW&quot;: &quot;Chinese Traditional&quot;, &#xa;  &quot;zu&quot;: &quot;Zulu&quot;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btncerrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cerrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncerrarActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
